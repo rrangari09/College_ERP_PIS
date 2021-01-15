@@ -2,10 +2,10 @@
 
 1. Download Mysql workbench server by following instructions  at https://dev.mysql.com/downloads/workbench/
 2. Install latest version of java by following instructions  at https://www.java.com/en/download/
-3. Create schema named as college_erp.
+3. Create schema named as college_erp and also extract Help folder.
 4. Change the password of database to "advik" as it is used to access the databse with username as "root".
 5. Now import data provided into Help folder named as college_erp.
-6. Now download glassfish server provided into Help Folder 
+6. Now download glassfish server using link https://www.oracle.com/middleware/technologies/glassfish-server.html. 
 7. Download Netbeans IDE by using https://netbeans.org/
 8. Now open project into Netbeans.
 9. Add mysql-connector jar provided into Help Folder into jar/library folder of project.
