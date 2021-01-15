@@ -9,6 +9,7 @@
 7. Download Netbeans IDE by using https://netbeans.org/
 8. Now open project into Netbeans.
 9. Add mysql-connector jar provided into Help Folder into jar/library folder of project.
+
 10.Also add server into Netbeans by using  Tools->Server->path where server folder is present on your local machine.
 11.Now start the server by clicking glassfish->bin-startserv.
 12.Run the application by using link : http://localhost:8080/ERP_College/
