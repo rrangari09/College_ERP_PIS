@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="AddUserBean" type="com.myapp.struts.AddUserBean"/>
+        <form-bean name="GenerateNoticeBean" type="com.myapp.struts.GenerateNoticeBean"/>
+        <form-bean name="ViewSubjectBean" type="com.myapp.struts.ViewSubjectBean"/>
+        <form-bean name="AddSubjectBean" type="com.myapp.struts.AddSubjectBean"/>
+        <form-bean name="IndexBean" type="com.myapp.struts.IndexBean"/>
+    
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+ 
+    </global-forwards>
+
+    <action-mappings>
+        
+        <action input="/AddSubject.jsp" name="AddSubjectBean" path="/AddSub" scope="session" type="com.myapp.struts.AddSubjectAction">
+        <forward name="success" path="/AddSubject.jsp"/>
+        </action> 
+        
+        <action input="/index.jsp" name="IndexBean" path="/Login" scope="session" type="com.myapp.struts.LoginAction">
+        <forward name="admin" path="/Admin.jsp"/>
+        <forward name="faculty" path="/Faculty.jsp"/>
+        <forward name="student" path="/Student.jsp"/>
+        <forward name="failure" path="/Failure.jsp"/>
+        </action>
+        
+        <action input="/ViewSubject.jsp" name="AddSubjectBean" path="/ViewSub" scope="session" type="com.myapp.struts.ViewSubjectAction">
+        <forward name="success_sub_list" path="/ViewSubject.jsp"/>
+        </action>
+        
+        <action input="/Login" name="AddSubjectBean" path="/AllUsers" scope="session" type="com.myapp.struts.ViewUserAction">
+        <forward name="view_users_success" path="/ViewUsers.jsp"/>
+        </action>
+        <action input="/ViewSubject.jsp" name="AddSubjectBean" path="/SubDelete" scope="session" type="com.myapp.struts.SubjectDeleteAction">
+        <forward name="success" path="/ViewSubject.jsp"/>
+
+        
+        </action>
+        <action input="/ViewSubject.jsp" name="AddSubjectBean" path="/AvailableSub" scope="session" type="com.myapp.struts.GetAvailableSubjectsAction">
+        
+         <forward name="success" path="/Subject_Enroll.jsp"/>
+        </action>
+        <action input="/Subject_Enroll.jsp" name="AddSubjectBean" path="/EnroSubject" scope="session" type="com.myapp.struts.EnrollSubjectAction">
+        <forward name="success" path="/Subject_Enroll.jsp"/>
+        </action>
+        <action input="/AddStudentsGrade.jsp" name="AddSubjectBean" path="/SubjectGrading" scope="session" type="com.myapp.struts.SelectSubjectForGradingAction">
+                <forward name="success" path="/AddStudentsGrade.jsp"/>
+        </action>
+        <action input="/AddStudentsGrade.jsp" name="AddSubjectBean" path="/StudentForGrades" scope="session" type="com.myapp.struts.SelectStudentForGradingAction">
+                        <forward name="success" path="/AddGrades.jsp"/>
+        </action>
+        <action input="/AddGrades.jsp" name="AddSubjectBean" path="/GradesAddition" scope="session" type="com.myapp.struts.AddGradesAction">
+        <forward name="success" path="/AddGrades.jsp"/>
+        </action>
+        
+        <action input="/GenerateNotice.jsp" name="GenerateNoticeBean" path="/GenNotice" scope="session" type="com.myapp.struts.GenerateNoticeAction">
+        <forward name="success" path="/GenerateNotice.jsp"/>
+        </action>
+        <action input="/Subject_Enroll.jsp" name="AddSubjectBean" path="/enrolled_sub_view" scope="session" type="com.myapp.struts.ViewEnrolledSubAction">
+         <forward name="success" path="/ViewEnrolledSubjects.jsp"/>       
+        </action>
+        <action input="/index.jsp" name="IndexBean" path="/DoLogout" scope="session" type="com.myapp.struts.LogoutAction">
+                 <forward name="success" path="/index.jsp"/>       
+        </action>
+        <action input="/AddUsers.jsp" name="AddUserBean" path="/UserAddition" scope="session" type="com.myapp.struts.AddUserAction">
+        <forward name="success" path="/Admin.jsp"/>
+        </action>                                  
+        
+        
+        
+                  
+                
+        
+        
+                
+        <action input="/" name="IndexBean" path="/pdf" scope="session" type="com.myapp.struts.GeneratePDFAction"/>
+    </action-mappings>   
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>
