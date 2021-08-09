@@ -16,5 +16,17 @@
 14. For Faculty use username='yash@gmail.com'  password='yash123'
 15. For Student use username='akash@gmail.com'  password='akash123'
 
-
-
+<b>Home</b>
+![home](https://user-images.githubusercontent.com/62243494/128662119-327a824b-6a39-4641-9d16-4769689fd049.jpg)
+<br/>
+<b>Admin</b>
+![admin](https://user-images.githubusercontent.com/62243494/128662176-f16b2edc-acda-42ac-a73c-0e9034b17149.jpg)
+<br/>
+<b>Faculty</b>
+![faculty](https://user-images.githubusercontent.com/62243494/128662195-4d7c45d4-2fb0-4910-92f5-5eef836d9b8d.jpg)
+<br/>
+<b>Student</b>
+![student](https://user-images.githubusercontent.com/62243494/128662223-c5392005-dd84-49cc-a699-0ba08d13e200.jpg)
+<br/>
+<b>Failure</b>
+![failure](https://user-images.githubusercontent.com/62243494/128662292-63d6b780-f81b-40c7-8bd9-1c963d8da0a0.jpg)
